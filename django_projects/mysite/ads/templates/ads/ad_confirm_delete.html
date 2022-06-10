@@ -1,0 +1,15 @@
+<meta name="dj4e" content="f5496252609c43eb8a3d147ab9b9c006">
+
+{% extends 'ads/base_menu.html' %}
+{% block title %}{{ settings.APP_NAME }}{% endblock %}
+{% block content %}
+<h1>Delete Ad</h1>
+
+<p>Are you sure you want to delete the ad: {{ ad }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yes, delete." class="btn btn-primary ">
+  <input type="submit" value="Cancel" class="btn btn-default" onclick="window.location.href='{% url 'ads:all' %}';return false;">
+</form>
+{% endblock %}

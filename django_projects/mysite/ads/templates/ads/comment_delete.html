@@ -1,0 +1,15 @@
+<meta name="dj4e" content="f5496252609c43eb8a3d147ab9b9c006">
+
+{% extends "ads/base_menu.html" %}
+{% block content %}
+<h1>Delete Comment</h1>
+
+<p>Are you sure you want to delete</p>
+<p>{{ comment.text }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit"  class="btn btn-primary" value="Yes, delete.">
+  <a href="{% url 'ads:ad_detail' comment.ad.id %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
